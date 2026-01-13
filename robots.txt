@@ -1,0 +1,22 @@
+# robots.txt for toolboxlabs.dev
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://toolboxlabs.dev/sitemap.xml
+
+# AI Crawlers - Allow for better indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
