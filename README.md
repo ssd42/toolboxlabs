@@ -80,7 +80,7 @@ Simply open `index.html` in your browser to view the page locally.
 - Structured data (JSON-LD) for search engines
 - Open Graph tags for social media sharing
 - Twitter Card support
-- AI crawler friendly (GPTBot, ChatGPT, etc.)
+- AI crawler friendly (GPTBot, ChatGPT, Claude, etc.)
 - Mobile-responsive design
 - Fast loading with optimized assets
 
