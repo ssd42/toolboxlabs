@@ -61,30 +61,33 @@
         }
 
         .orb-1 {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: var(--accent-orange);
             top: 10%;
             left: 10%;
             animation-delay: 0s;
+            opacity: 0.15;
         }
 
         .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: #6366f1;
-            bottom: 20%;
-            right: 10%;
-            animation-delay: 5s;
+            width: 500px;
+            height: 500px;
+            background: var(--accent-orange);
+            bottom: 10%;
+            right: 5%;
+            animation-delay: 7s;
+            opacity: 0.2;
         }
 
         .orb-3 {
-            width: 250px;
-            height: 250px;
-            background: #8b5cf6;
-            top: 50%;
+            width: 350px;
+            height: 350px;
+            background: #303048;
+            top: 40%;
             left: 50%;
-            animation-delay: 10s;
+            animation-delay: 14s;
+            opacity: 0.4;
         }
 
         @keyframes float {
@@ -167,68 +170,10 @@
         .subtitle {
             font-size: clamp(1.125rem, 3vw, 1.5rem);
             color: var(--text-muted);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             font-weight: 400;
             line-height: 1.6;
             animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        /* Email form */
-        .email-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease-out 0.8s both;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .email-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--text-light);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .email-input:focus {
-            outline: none;
-            border-color: var(--accent-orange);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .email-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .submit-btn {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff8c42 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-            white-space: nowrap;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(249, 113, 22, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
         }
 
         /* Social proof / Features */
@@ -246,15 +191,40 @@
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(249, 113, 22, 0.1);
-            border-radius: 12px;
+            width: 64px;
+            height: 64px;
+            background: rgba(37, 37, 61, 0.6);
+            border: 1px solid rgba(249, 113, 22, 0.15);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+            margin: 0 auto 1.25rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent-orange);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature:hover .feature-icon {
+            background: rgba(249, 113, 22, 0.1);
+            border-color: rgba(249, 113, 22, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(249, 113, 22, 0.15);
+        }
+
+        .feature:hover .feature-icon svg {
+            stroke: #ff8c42;
+            transform: scale(1.1);
         }
 
         .feature-title {
@@ -313,40 +283,100 @@
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
+                min-height: 100vh;
+                justify-content: flex-start;
+                padding-top: 3rem;
+            }
+
+            .logo {
+                margin-bottom: 2rem;
+                font-size: 1.25rem;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .pulse-dot {
+                width: 6px;
+                height: 6px;
+            }
+
+            h1 {
+                margin-bottom: 1.25rem;
+                letter-spacing: -1px;
+            }
+
+            .subtitle {
+                margin-bottom: 3rem;
+                padding: 0 0.5rem;
+            }
+
+            .features {
+                gap: 2.5rem;
+                margin-top: 3rem;
+            }
+
+            .feature {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .feature-icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .feature-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .footer {
+                position: relative;
+                margin-top: 4rem;
+                transform: none;
+                left: auto;
+                bottom: auto;
+                padding-bottom: 2rem;
+            }
+
+            /* Reduce orb sizes on mobile */
+            .orb-1 {
+                width: 250px;
+                height: 250px;
+            }
+
+            .orb-2 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .orb-3 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.25rem;
             }
 
             .features {
                 gap: 2rem;
             }
 
-            .email-form {
-                flex-direction: column;
-                width: 100%;
+            .feature-title {
+                font-size: 1rem;
             }
 
-            .email-input {
-                min-width: 100%;
+            .feature-desc {
+                font-size: 0.8125rem;
             }
-
-            .submit-btn {
-                width: 100%;
-            }
-        }
-
-        /* Success message */
-        .success-message {
-            display: none;
-            padding: 1rem;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: 12px;
-            color: #4ade80;
-            margin-top: 1rem;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
         }
     </style>
 </head>
@@ -367,40 +397,39 @@
             <h1>Something extraordinary is brewing</h1>
 
             <p class="subtitle">
-                We're crafting the next generation of developer tools.
-                Be the first to know when we launch.
+                We're crafting the next generation of developer tools.<br>
+                Stay tuned.
             </p>
-
-            <form class="email-form" id="emailForm">
-                <input
-                    type="email"
-                    class="email-input"
-                    placeholder="Enter your email"
-                    required
-                    id="emailInput"
-                >
-                <button type="submit" class="submit-btn">Get Early Access</button>
-            </form>
-
-            <div class="success-message" id="successMessage">
-                Thanks! We'll notify you when we launch.
-            </div>
 
             <div class="features">
                 <div class="feature">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
                     <div class="feature-title">Lightning Fast</div>
                     <div class="feature-desc">Built for speed and performance</div>
                 </div>
 
                 <div class="feature">
-                    <div class="feature-icon">🎨</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
                     <div class="feature-title">Beautiful Design</div>
                     <div class="feature-desc">Crafted with attention to detail</div>
                 </div>
 
                 <div class="feature">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z"/>
+                        </svg>
+                    </div>
                     <div class="feature-title">Secure by Default</div>
                     <div class="feature-desc">Your data is always protected</div>
                 </div>
@@ -413,39 +442,19 @@
     </div>
 
     <script>
-        document.getElementById('emailForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Add subtle mouse parallax effect (desktop only)
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
 
-            const email = document.getElementById('emailInput').value;
-            const successMessage = document.getElementById('successMessage');
-
-            // Here you would typically send the email to your backend
-            // For now, we'll just show a success message
-            console.log('Email submitted:', email);
-
-            // Show success message
-            successMessage.classList.add('show');
-
-            // Clear the input
-            document.getElementById('emailInput').value = '';
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-        });
-
-        // Add subtle mouse parallax effect
-        document.addEventListener('mousemove', (e) => {
-            const orbs = document.querySelectorAll('.orb');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            orbs.forEach((orb, index) => {
-                const speed = (index + 1) * 20;
-                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 20;
+                    orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>

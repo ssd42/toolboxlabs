@@ -11,16 +11,44 @@ A modern, vibey startup landing page with smooth animations and mysterious vibes
 - Email signup form
 - Smooth fade-in animations
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages with Custom Domain
 
-1. Push this repo to GitHub
-2. Go to your repository settings
-3. Navigate to "Pages" in the left sidebar
-4. Under "Source", select your main branch
-5. Select "/ (root)" as the folder
-6. Click "Save"
+### 1. Push to GitHub
+```bash
+git add .
+git commit -m "Add coming soon landing page"
+git push origin main
+```
 
-Your site will be live at: `https://[your-username].github.io/toolboxlabs/`
+### 2. Configure GitHub Pages
+1. Go to your repository settings
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select your main branch
+4. Select "/ (root)" as the folder
+5. Click "Save"
+
+### 3. Configure Custom Domain (toolboxlabs.dev)
+1. In GitHub Pages settings, enter `toolboxlabs.dev` in the Custom domain field
+2. Wait for DNS check to complete
+3. Enable "Enforce HTTPS" once DNS is configured
+
+### 4. Configure DNS at Your Domain Registrar
+Add these DNS records for toolboxlabs.dev:
+
+**A Records** (point to GitHub Pages):
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+**Or use a CNAME record** (if using www subdomain):
+```
+www.toolboxlabs.dev -> [your-username].github.io
+```
+
+Your site will be live at: `https://toolboxlabs.dev`
 
 ## Local Development
 
